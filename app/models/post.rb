@@ -10,6 +10,6 @@ class Post < ApplicationRecord
     def update_posts_counter
         user.posts_counter = 0 if user.posts_counter.nil?
         user.posts_counter += 1
-        user.save()
+        user.save
     end
 end
