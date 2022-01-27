@@ -39,3 +39,14 @@
 .post-wrapper p {
     text-align: right;
 }
+
+.bio-div {
+    width: 80%;
+    margin: auto;
+    border: 1px solid rgb(53, 52, 52);
+    padding: 10px;
+}
+
+.bio-div h4 {
+    margin-bottom: 10px;
+}
