@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Service to download ftp files from the serve
 class Like < ApplicationRecord
   belongs_to :post, counter_cache: :likes_counter

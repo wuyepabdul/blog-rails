@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Service to download ftp files from the serve
 class Post < ApplicationRecord
   belongs_to :user, optional: true, counter_cache: :posts_counter
