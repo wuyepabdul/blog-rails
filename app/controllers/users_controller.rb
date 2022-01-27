@@ -1,7 +1,8 @@
-class UsersController < ApplicationController
-  def index
-  end
+# frozen_string_literal: true
 
-  def show
-  end
+# Service to download ftp files from the serve
+class UsersController < ApplicationController
+  def index; end
+
+  def show; end
 end
