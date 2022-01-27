@@ -1,70 +1,24 @@
-# Ruby on Rails blog
-Blog app that allows a user to create posts, add comments to posts and also like a post.
+# README
 
-## Built with
-Ruby
-Ruby on Rails
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-## Getting Started
+Things you may want to cover:
 
-To get a local copy up and running follow these simple example steps.
+* Ruby version
 
-## Prerequisites
-  - Ruby
-  - Rails
-  - PostgreSQL
-  - rspec-rails
+* System dependencies
 
-## Setup
+* Configuration
 
-- Make sure you have Ruby IRB installed on your computer
-- Clone or download this repo on your machine
-- Enter project directory
-## Install
+* Database creation
 
-```sh
-bundle install
-```
+* Database initialization
 
-### Database
+* How to run the test suite
 
-```sh
-# Create user
-sudo -u postgres createuser blog -s
+* Services (job queues, cache servers, search engines, etc.)
 
-# Create the database
-rake db:create
+* Deployment instructions
 
-# Load the schema
-rails db:schema:load
-
-## Apply migration (only if you generate a new migration file)
-rails db:migrate
-```
-### Run
-
-```sh
-rails s
-```
-## Author
-
-👤 **Abdul Wuyep**
-
-- GitHub: [@wuyepabdul](https://github.com/wuyepabdul)
-- Twitter: [@AbdulWuyep](https://twitter.com/AbdulWuyep)
-- LinkedIn: [Abdul Wuyep](https://www.linkedin.com/in/abdul-wuyep/)
-
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-## Show your support
-
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
+* ...

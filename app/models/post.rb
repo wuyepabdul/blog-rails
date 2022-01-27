@@ -1,16 +1,15 @@
-# Service to download ftp files from the serve
 class Post < ApplicationRecord
-  belongs_to :user, optional: true, counter_cache: :posts_counter
+  belongs_to :author, class_name: 'User', counter_cache: :posts_counter
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+  after_save :update_posts_counter
 
   def recent_comments
     comments.last(5)
   end
 
   def update_posts_counter
-    user.posts_counter = 0 if user.posts_counter.nil?
-    user.posts_counter += 1
-    user.save
+    author.increment!(:posts_counter)
   end
 end
