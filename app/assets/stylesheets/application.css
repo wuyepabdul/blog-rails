@@ -1,85 +1,84 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 .button {
-    width: 200px;
-    margin: 0 auto;
-    align-items: center;
+  width: 200px;
+  margin: 0 auto;
+  align-items: center;
 }
 
 .button button {
-    width: 100%;
-    padding: 10px 25px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  width: 100%;
+  padding: 10px 25px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-
 .post-container {
-    display: flex;
-    width: 80%;
-    margin: 20px auto;
-    justify-content: center;
+  display: flex;
+  width: 80%;
+  margin: 20px auto;
+  justify-content: center;
 }
 
 .post-img {
-    width: 300px;
-    margin-right: 30px;
+  width: 300px;
+  margin-right: 30px;
 }
 
 .post-img img {
-    width: 100%;
+  width: 100%;
 }
 
 .post-wrapper {
-    width: 100%;
-    height: 200px;
-    border: 1px solid rgb(53, 52, 52) ;
-    padding: 20px;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    justify-content: space-between;
-    
+  width: 100%;
+  height: 200px;
+  border: 1px solid rgb(53, 52, 52);
+  padding: 20px;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .post-wrapper h1 {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .post-wrapper p {
-    text-align: right;
+  text-align: right;
 }
 
-.bio-div, .post-div {
-    width: 80%;
-    margin: 10px auto;
-    border: 1px solid rgb(53, 52, 52);
-    padding: 10px;
+.bio-div,
+.post-div {
+  width: 80%;
+  margin: 10px auto;
+  border: 1px solid rgb(53, 52, 52);
+  padding: 10px;
 }
 
 .bio-div {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
 }
 
 .bio-div h4 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .post-div {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .post-comment-wrapper {
-    margin: 30px auto;
+  margin: 30px auto;
 }
 
 .comment-div {
-    border: 1px solid rgb(53, 52, 52);
-    width:80%;
-    margin: 0 auto;
-    padding:10px;
+  border: 1px solid rgb(53, 52, 52);
+  width: 80%;
+  margin: 0 auto;
+  padding: 10px;
 }
