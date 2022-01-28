@@ -4,5 +4,7 @@ class PostsController < ApplicationController
     @posts = @user.recent_posts
   end
 
-  def show; end
+  def show
+
+  end
 end
