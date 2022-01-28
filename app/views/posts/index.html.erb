@@ -3,36 +3,28 @@
         <img src='https://i.pinimg.com/originals/73/16/f5/7316f550de9ca0045e3d8d98a5bb5e44.png' alt='post' >
     </div>
     <div class='post-wrapper'>
-        <h1> User name </h1>
-        <p> Number of posts: x </p>
+        <h1> <%= @user.name %> </h1>
+        <p> Number of posts: <%= @user.posts_counter %> </p>
     </div>
 </div>
 
 
-<div class='post-comment-wrapper'>
-    <div class='post-div'>
-        <h4> Post 1</h4>
-        <p> lorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsumdeasdflorem ipsum deprocadi ips deasdflorem ipsum ... </p>
+<% @posts.each do |post| %>
+    <div class='post-comment-wrapper'>
+        <%= link_to user_post_path(@user.id, post.id) do %>
+            <div class='post-div'>
+                <h4> Post 1</h4>
+                <p> <%= post.text %> </p>
+            </div>
+        <% end %>
+        <div class='comment-div'>
+        <% post.comments.each do |comment| %>
+            <p> @user.name: <%= comment.text %> </p>
+        <% end %>
+            
+        </div>
     </div>
-    <div class='comment-div'>
-        <p> Username: Comment 1 </p>
-        <p> Username: Comment 2 </p>
-        <p> Username: Comment 3 </p>
-        <p> Username: Comment 4 </p>
-    </div>
-</div>
-<div class='post-comment-wrapper'>
-    <div class='post-div'>
-        <h4> Post 1</h4>
-        <p> lorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsumdeasdflorem ipsum deprocadi ips deasdflorem ipsum ... </p>
-    </div>
-    <div class='comment-div'>
-        <p> Username: Comment 1 </p>
-        <p> Username: Comment 2 </p>
-        <p> Username: Comment 3 </p>
-        <p> Username: Comment 4 </p>
-    </div>
-</div>
+<% end %>
 
 <div class='button'>
     <button> Paginate </button>

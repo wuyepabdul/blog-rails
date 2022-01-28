@@ -3,27 +3,26 @@
         <img src='https://i.pinimg.com/originals/73/16/f5/7316f550de9ca0045e3d8d98a5bb5e44.png' alt='post' >
     </div>
     <div class='post-wrapper'>
-        <h1> User name </h1>
-        <p> Number of posts: x </p>
+        <h1> <%= @user.name %> </h1>
+        <p> Number of posts: <%= @user.posts_counter %> </p>
     </div>
 </div>
 
 <div class='bio-div'>
     <h4> Bio</h4>
-    <p> lorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdf 
-    lorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum depr
-    </p>
+    <p> <%= @user.bio %> </p>
 
 </div>
 
-<div class='post-div'>
-    <h4> Post 1</h4>
-    <p> lorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsumdeasdflorem ipsum deprocadi ips deasdflorem ipsum ... </p>
-</div>
-<div class='post-div'>
-    <h4> Post 1</h4>
-    <p> lorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsumdeasdflorem ipsum deprocadi ips deasdflorem ipsum ... </p>
-</div>
+<% @posts.each do |post| %>
+    <%= link_to user_posts_path(@user.id) do %>
+        <div class='post-div'>
+            <h4> <%= post.title %> </h4>
+            <p> lorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsum deprocadi ips deasdflorem ipsumdeasdflorem ipsum deprocadi ips deasdflorem ipsum ... </p>
+        </div>
+    <% end %>
+<% end %>
+
 
 <div class='button'>
     <button> See all Posts </button>
