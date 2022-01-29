@@ -1,3 +1,6 @@
+<div class='message'>
+    <%= flash[:notice] %>
+</div>
 <div class='post-comment-wrapper'>
     <div class='likes-wrapper'>
         <p>Comments:<%= @post.comments_counter.nil? ? '0' : @post.comments_counter %>, Likes : <%= @post.likes_counter.nil? ? '0' : @post.likes_counter %>
