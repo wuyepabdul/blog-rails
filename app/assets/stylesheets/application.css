@@ -119,6 +119,12 @@ textarea {
   margin: 0 auto;
 }
 
+.form-container form,
+textarea,
+input {
+  width: 100%;
+}
+
 .form-div textarea {
   width: 100%;
 }
@@ -129,10 +135,4 @@ textarea {
   flex-direction: column;
   margin: 0 auto;
   align-items: center;
-}
-
-.form-container form,
-textarea,
-input {
-  width: 100%;
 }
