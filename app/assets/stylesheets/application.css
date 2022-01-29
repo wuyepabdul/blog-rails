@@ -9,6 +9,17 @@ a {
   color: inherit;
 }
 
+input,
+textarea {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  height: 80px;
+}
+
 .button {
   width: 200px;
   margin: 0 auto;
@@ -85,6 +96,10 @@ a {
   margin: 30px auto;
 }
 
+.post-comment-wrapper .post-div {
+  text-align: left;
+}
+
 .comment-div {
   border: 1px solid rgb(53, 52, 52);
   width: 80%;
@@ -104,6 +119,20 @@ a {
   margin: 0 auto;
 }
 
-.form-div textarea{
+.form-div textarea {
+  width: 100%;
+}
+
+.form-container {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.form-container form,
+textarea,
+input {
   width: 100%;
 }
