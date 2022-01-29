@@ -20,6 +20,12 @@ textarea {
   height: 80px;
 }
 
+.message {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .button {
   width: 200px;
   margin: 0 auto;

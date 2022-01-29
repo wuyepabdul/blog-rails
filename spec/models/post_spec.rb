@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe 'validates' do
-    subject { Post.new title: 'Post 1', likes_counter:0, comments_counter:0 }
+    subject { Post.new title: 'Post 1', likes_counter: 0, comments_counter: 0 }
 
     before { subject.save }
 
