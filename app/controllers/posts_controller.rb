@@ -16,7 +16,6 @@ class PostsController < ApplicationController
   def create
     post = current_user.posts.new(post_params)
     if post.save
-      # redirect_to user_post_path(post.author.id, post.id), notice: 'Published successfully!'
       redirect_to user_posts_path(post.author.id), notice: 'Published successfully!'
     else
       flash.now[:alert] = 'Failed to publish post!'
