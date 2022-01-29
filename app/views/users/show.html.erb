@@ -1,31 +1,9 @@
-<div class='post-container'>
-    <div class='post-img'>
-        <img src='https://i.pinimg.com/originals/73/16/f5/7316f550de9ca0045e3d8d98a5bb5e44.png' alt='post' >
-    </div>
-    <div class='post-wrapper'>
-        <h1> <%= @user.name %> </h1>
-        <p> Number of posts: <%= @user.posts_counter %> </p>
-    </div>
-</div>
-
-<div class='bio-div'>
-    <h4> Bio</h4>
-    <p> <%= @user.bio %> </p>
-
-</div>
-
-<% @posts.each do |post| %>
-    <%= link_to user_post_path(@user.id, post.id) do %>
-        <div class='post-div'>
-            <h2> <%= post.title %> </h2>
-            <p> Comments: <%= post.comments_counter.nil? ? '0' : post.comments_counter %> Likes: <%= post.likes_counter.nil? ? '0' : post.likes_counter %> </p>
-        </div>
-    <% end %>
+<%= render @user %>
+<% if @user.bio.present? %>
+  <div class="mt-5 notification">
+    <h5 class="title is-6">Bio</h5>
+    <p class="is-6"><%= @user.bio %></p>
+  </div>
 <% end %>
-
-
-<div class='button'>
-<%= link_to user_posts_path(@user.id) do %>
-    <button> See all Posts </button>
-<% end %>
-</div>
+<%= render partial: "posts/post", collection: @posts %>
+<%= link_to "See all post", user_posts_path(@user.id), class: "button is-link is-small is-primary" %>

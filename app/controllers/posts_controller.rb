@@ -1,30 +1,36 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.recent_posts
+    @posts = @user.posts.includes(:comments)
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
+    @comments = @post.comments.all.order('created_at')
+    @liked = @post.liked? current_user.id
   end
 
-  def new
-    @post = Post.new
-  end
+  def new; end
 
   def create
     post = current_user.posts.new(post_params)
-    if post.save
-      redirect_to user_posts_path(post.author.id), notice: 'Published successfully!'
-    else
-      flash.now[:alert] = 'Failed to publish post!'
+
+    respond_to do |format|
+      format.html do
+        if post.save
+          redirect_to user_post_path(post.user.id, post.id), notice: 'Published successfully!'
+        else
+          flash.now[:alert] = 'Failed to publish post!'
+          render :new
+        end
+      end
     end
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:data).permit(:title, :text)
   end
 end

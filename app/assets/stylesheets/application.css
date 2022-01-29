@@ -1,144 +1,27 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-input,
-textarea {
-  padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-textarea {
-  height: 80px;
-}
-
-.message {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.button {
-  width: 200px;
-  margin: 0 auto;
-  align-items: center;
-}
-
-.button button {
-  width: 100%;
-  padding: 10px 25px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.post-container {
-  display: flex;
-  width: 80%;
-  margin: 20px auto;
-  justify-content: center;
-}
-
-.post-img {
-  width: 300px;
-  margin-right: 30px;
-}
-
-.post-img img {
-  width: 100%;
-}
-
-.post-wrapper {
-  width: 100%;
-  height: 200px;
-  border: 1px solid rgb(53, 52, 52);
-  padding: 20px;
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.post-wrapper h1 {
-  font-size: 50px;
-}
-
-.post-wrapper p {
-  text-align: right;
-}
-
-.bio-div,
-.post-div {
-  width: 80%;
-  margin: 10px auto;
-  border: 1px solid rgb(53, 52, 52);
-  padding: 10px;
-}
-
-.bio-div {
-  margin-bottom: 25px;
-}
-
-.bio-div h4 {
-  margin-bottom: 10px;
-}
-
-.post-div {
-  margin-bottom: 10px;
-}
-
-.post-div p {
-  text-align: right;
-}
-
-.post-comment-wrapper {
-  margin: 30px auto;
-}
-
-.post-comment-wrapper .post-div {
-  text-align: left;
-}
-
-.comment-div {
-  border: 1px solid rgb(53, 52, 52);
-  width: 80%;
-  margin: 0 auto;
-  padding: 10px;
-}
-
-.likes-wrapper {
-  width: 80%;
-  display: flex;
-  margin: 0 auto;
-  justify-content: space-between;
-}
-
-.form-div {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.form-container form,
-textarea,
-input {
-  width: 100%;
-}
-
-.form-div textarea {
-  width: 100%;
-}
-
-.form-container {
-  width: 80%;
+.list {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  align-items: center;
+  gap: 16px;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 50%;
+  }
 }
