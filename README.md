@@ -2,8 +2,6 @@
 
 > Blog app - Add forms
 
-![form](https://user-images.githubusercontent.com/9049260/150311945-b6963670-fcad-4237-ad82-0db5040dd215.png)
-
 In this project, I add forms to the Blog app.
 ## Getting Started
 
