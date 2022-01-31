@@ -106,6 +106,11 @@ textarea {
   text-align: left;
 }
 
+.post-comment-wrapper p {
+  text-align: left;
+  margin-top: 10px;
+}
+
 .comment-div {
   border: 1px solid rgb(53, 52, 52);
   width: 80%;
