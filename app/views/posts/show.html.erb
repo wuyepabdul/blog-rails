@@ -22,16 +22,14 @@
     </div>
     <div class='comment-div'>
         <% @post.comments.each do |comment| %>
-    <%= can? :destroy, comment %>
-        
-        <div class='dflex justify-between'> 
-            <p class='comment'><%= comment.author.name %>: <%= comment.text %> </p>
-            <% if can? :destroy, comment %>
-                <%= form_with  url: post_comment_path(@post.id, comment.id), method: :delete do |form| %>
-                    <%= form.submit "Delete", class: "like-button" %>
+            <div class='dflex justify-between'> 
+                <p class='comment'><%= comment.author.name %>: <%= comment.text %> </p>
+                <% if can? :destroy, comment %>
+                    <%= form_with  url: post_comment_path(@post.id, comment.id), method: :delete do |form| %>
+                        <%= form.submit "Delete", class: "like-button" %>
+                    <% end %>
                 <% end %>
-            <% end %>
-        </div>
+            </div>
         <% end %>
     </div>
 </div>
