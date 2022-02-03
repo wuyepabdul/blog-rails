@@ -16,6 +16,14 @@ textarea {
   margin-bottom: 10px;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
+
+.m-left-right {
+ margin:0 5px;
+}
+
 textarea {
   height: 80px;
 }
@@ -107,11 +115,19 @@ textarea {
   padding: 10px;
 }
 
+.comment {
+  padding-top: 20px;
+}
+
 .likes-wrapper {
   width: 80%;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
+}
+
+.dflex {
+  display: flex;
 }
 
 .form-div {

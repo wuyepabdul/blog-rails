@@ -12,7 +12,14 @@
 
 ```
 git clone https://github.com/wuyepabdul/blog-rails
+
 cd blog-rails
+
+rails db:create
+rails db:migrate
+rails db:seed
+
+rails server
 ```
 
 ## Tests

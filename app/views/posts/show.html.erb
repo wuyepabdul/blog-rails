@@ -1,16 +1,19 @@
 <div class='post-comment-wrapper'>
     <div class='likes-wrapper'>
         <p>Comments:<%= @post.comments_counter %>, Likes : <%= @post.likes_counter %>
-       <div>
-        <%= form_with url: post_likes_path(@post.id) do |form| %>
-            <%= form.submit "Like", class: "like-button" %>
-        <% end %>
-
-        <% if can? :destroy, @post %>
-            <%= form_with url: user_post_path(@post.id), method: :delete do |form| %>
-                <%= form.submit "Delete", class: "like-button" %>
-            <% end %>
-        <% end %>
+       <div class='dflex'>
+            <div class='m-left-right'>
+                <%= form_with url: post_likes_path(@post.id) do |form| %>
+                    <%= form.submit "Like", class: "like-button" %>
+                <% end %>
+            </div>
+            <div>
+                <% if can? :destroy, @post %>
+                    <%= form_with url: user_post_path(@post.id), method: :delete do |form| %>
+                        <%= form.submit "Delete", class: "like-button" %>
+                    <% end %>
+                <% end %>
+            </div>
        </div>
     </div>
     <div class='post-div'>
@@ -19,14 +22,15 @@
     </div>
     <div class='comment-div'>
         <% @post.comments.each do |comment| %>
-        <div> 
-        <%= comment.author.name %>: <%= comment.text %> 
-<!--        <% if can? :destroy, comment %>
-            <%= form_with  url: post_comment_path(@post.id, comment.id), method: :delete do |form| %>
-                <%= form.submit "Delete", class: "like-button" %>
+    <%= can? :destroy, comment %>
+        
+        <div class='dflex justify-between'> 
+            <p class='comment'><%= comment.author.name %>: <%= comment.text %> </p>
+            <% if can? :destroy, comment %>
+                <%= form_with  url: post_comment_path(@post.id, comment.id), method: :delete do |form| %>
+                    <%= form.submit "Delete", class: "like-button" %>
+                <% end %>
             <% end %>
-            -->
-        <% end %>
         </div>
         <% end %>
     </div>
