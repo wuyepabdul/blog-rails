@@ -120,7 +120,7 @@ textarea {
 }
 
 .form-container form,
-textarea{
+textarea {
   width: 100%;
 }
 
@@ -136,6 +136,8 @@ textarea{
   align-items: center;
 }
 
-input[type='text'], input[type='email'], input[type='password'] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   width: 100%;
 }
