@@ -7,7 +7,8 @@ class Ability
     can :read, Post, published: true
     
     return unless user.present?
-    can [:read, :create, :update, :detroy]
+    can [:read, :create, :destroy], Post, author: user
+    can [:read, :create, :destroy], Comment, user:user
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
