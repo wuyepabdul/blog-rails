@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def index
     @user = User.find(params[:user_id])
     @posts = @user.recent_posts
@@ -24,11 +23,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = current_user.posts.find(params[:id])
-    if can? :destroy, @post
-      @post.destroy
-      redirect_to user_posts_path(current_user.id), notice: 'Post deleted successfully!'
-    end
+    @post = Post.find(params[:id])
+    return unless can? :destroy, @post
+
+    @post.destroy
+    redirect_to user_posts_path(current_user.id), notice: 'Post deleted successfully!'
   end
 
   private
