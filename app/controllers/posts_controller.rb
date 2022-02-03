@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.find(params[:id])
     if can? :destroy, @post
       @post.destroy
-      redirect_to user_posts_path(current_user.id), notice: 'Post deleted successfully!' 
+      redirect_to user_posts_path(current_user.id), notice: 'Post deleted successfully!'
     end
   end
 
@@ -35,6 +35,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text)
   end
-
-
 end
