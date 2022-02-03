@@ -21,11 +21,10 @@
         <% @post.comments.each do |comment| %>
         <div> 
         <%= comment.author.name %>: <%= comment.text %> 
-<!--        <% if can? :destroy, comment %>
+        <% if can? :destroy, comment %>
             <%= form_with  url: post_comment_path(@post.id, comment.id), method: :delete do |form| %>
                 <%= form.submit "Delete", class: "like-button" %>
             <% end %>
-            -->
         <% end %>
         </div>
         <% end %>
