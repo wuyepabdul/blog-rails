@@ -1,6 +1,6 @@
 <div class='post-comment-wrapper'>
     <div class='likes-wrapper'>
-        <p>Comments:<%= @post.comments_counter %>, Likes : <%= @post.likes_counter %>
+        <p>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
        <div class='dflex'>
             <div class='m-left-right'>
                 <%= form_with url: post_likes_path(@post.id) do |form| %>
