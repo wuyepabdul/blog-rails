@@ -1,14 +1,14 @@
 <div>
     <p> Index page </p>
     <% @users.each do |user| %>
-        <%= link_to user_path(user.id) do %>
-            <div class='post-container'>
+        <%= link_to user_path(user.id), :class=>'link-to' do %>
+            <div class='user post-container'>
                 <div class='post-img'>
                     <img src='https://i.pinimg.com/originals/73/16/f5/7316f550de9ca0045e3d8d98a5bb5e44.png' alt='post' >
                 </div>
                 <div class='post-wrapper'>
-                    <h1> <%= user.name %> </h1>
-                    <p> Number of posts: <%= user.posts_counter %> </p>
+                    <h1 class='username'> <%= user.name %> </h1>
+                    <p class='num_posts'> Number of posts: <%= user.posts_counter %> </p>
                 </div>
             </div>
         <% end %>
