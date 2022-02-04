@@ -4,15 +4,15 @@ describe 'User Index Page', type: :feature do
   before(:each) do
     visit user_session_path
     @user = User.create!(
-      name: 'user1', photo: 'test_image1', email: 'user1@gmail.com',
+      name: 'user1', photo: '', email: 'user1@gmail.com',
       password: 'user1user1', confirmed_at: Time.now, posts_counter: 4
     )
     User.create!(
-      name: 'user2', photo: 'test_image2', email: 'user2@gmail.com',
+      name: 'user2', photo: '', email: 'user2@gmail.com',
       password: 'user2user2', confirmed_at: Time.now, posts_counter: 3
     )
     User.create!(
-      name: 'user3', photo: 'test_image3', email: 'user3@gmail.com',
+      name: 'user3', photo: '', email: 'user3@gmail.com',
       password: 'user3user3', confirmed_at: Time.now, posts_counter: 1
     )
     fill_in 'Email', with: 'user2@gmail.com'
