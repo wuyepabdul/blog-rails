@@ -12,16 +12,10 @@ class CommentsController < ApplicationController
     post = Post.find(params[:post_id])
     comment = post.comments.new(text: comment_params[:text], author: current_user)
 
-    respond_to do |format|
-      format.html do
-        if comment.save
-
-          redirect_to user_post_path(post.author.id, post.id), notice: 'Comment added!'
-        else
-          flash.now[:error] = 'Faild to send comment!'
-          redirect_to user_post_path(post.author.id, post.id), alert: 'Failed to add comment!'
-        end
-      end
+    if comment.save
+      render json: { success:true }, status: :created
+    else
+      render json: { success: false }, status: :bad_request
     end
   end
 
