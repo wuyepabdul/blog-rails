@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     can :read, Post, published: true
     can :read, User, published: true
-    
+
     return unless user.present?
 
     can %i[read create destroy], Post, author: user

@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
+
   def index
     @comments = Post.find(params[:post_id]).comments
     render json: @comments, status: :ok
@@ -13,9 +16,10 @@ class CommentsController < ApplicationController
     comment = post.comments.new(text: comment_params[:text], author: current_user)
 
     if comment.save
-      render json: { success:true }, status: :created
+      render json: { success: true }, status: :created
     else
-      render json: { success: false }, status: :bad_request
+      # render json: { success: false }, status: :bad_request
+      render json: comment.errors , status: :bad_request
     end
   end
 
@@ -32,6 +36,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:data).permit(:text)
+    params.require(:comment).permit(:text)
   end
 end
