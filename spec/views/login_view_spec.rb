@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 describe 'Login', type: :feature do
   before(:each) do
     visit user_session_path
