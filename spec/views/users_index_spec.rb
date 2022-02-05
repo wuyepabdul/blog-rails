@@ -32,11 +32,8 @@ describe 'User Index Page', type: :feature do
       imgs = page.all('img')
       expect(imgs.size).to eql 3
       # NOTE: users are rendered in the alphabetical order
-      
       expect(imgs[0]['src']).to eql 'https://i.pinimg.com/originals/73/16/f5/7316f550de9ca0045e3d8d98a5bb5e44.png'
-
       expect(imgs[1]['src']).to eql 'https://i.pinimg.com/originals/73/16/f5/7316f550de9ca0045e3d8d98a5bb5e44.png'
-      
       expect(imgs[2]['src']).to eql 'https://i.pinimg.com/originals/73/16/f5/7316f550de9ca0045e3d8d98a5bb5e44.png'
     end
 
