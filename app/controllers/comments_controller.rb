@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
-  load_and_authorize_resource
+  def index
+    @comments = Post.find(params[:post_id]).comments
+    render json: @comments, status: :ok
+  end
   
   def new
     @comments = Comment.new

@@ -1,15 +1,17 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   
   def index
     @user = User.find(params[:user_id])
     @posts = @user.recent_posts
+    render json: @posts, status: :ok
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
+    render json: @post, status: :ok
   end
 
   def new
