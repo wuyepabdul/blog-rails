@@ -1,4 +1,12 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+  load_and_authorize_resource
+
+  def index
+    @comments = Post.find(params[:post_id]).comments
+    render json: @comments, status: :ok
+  end
+
   def new
     @comments = Comment.new
   end
@@ -7,16 +15,11 @@ class CommentsController < ApplicationController
     post = Post.find(params[:post_id])
     comment = post.comments.new(text: comment_params[:text], author: current_user)
 
-    respond_to do |format|
-      format.html do
-        if comment.save
-
-          redirect_to user_post_path(post.author.id, post.id), notice: 'Comment added!'
-        else
-          flash.now[:error] = 'Faild to send comment!'
-          redirect_to user_post_path(post.author.id, post.id), alert: 'Failed to add comment!'
-        end
-      end
+    if comment.save
+      render json: { success: true }, status: :created
+    else
+      # render json: { success: false }, status: :bad_request
+      render json: comment.errors, status: :bad_request
     end
   end
 
@@ -33,6 +36,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:data).permit(:text)
+    params.require(:comment).permit(:text)
   end
 end

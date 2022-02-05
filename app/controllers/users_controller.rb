@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all.order('created_at Desc')
+    render json: @users, status: :ok
   end
 
   def show
