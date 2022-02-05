@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 describe 'In Post Show Page', type: :feature do
   before(:each) do
     visit user_session_path
