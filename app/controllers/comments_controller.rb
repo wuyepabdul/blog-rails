@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     @comments = Post.find(params[:post_id]).comments
     render json: @comments, status: :ok
   end
-  
+
   def new
     @comments = Comment.new
   end
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
       render json: { success: true }, status: :created
     else
       # render json: { success: false }, status: :bad_request
-      render json: comment.errors , status: :bad_request
+      render json: comment.errors, status: :bad_request
     end
   end
 
